@@ -1,6 +1,6 @@
 export default {
   content: [
-    'test/support/templates/*.ex',
-    'test/support/templates/*.heex'
+     'test/support/templates/*.ex',
+     'test/support/templates/*.heex'
   ]
 }

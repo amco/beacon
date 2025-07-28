@@ -120,7 +120,7 @@ defmodule Beacon.Content do
   def default_layout do
     %{
       title: "Default",
-      template: "<%= @inner_content %>"
+      template: "<Beacon.Web.CoreComponents.flash_group id=\"flash_group\" flash={@flash} />\n    <%= @inner_content %>"
     }
   end
 

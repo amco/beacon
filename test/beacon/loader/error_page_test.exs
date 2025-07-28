@@ -40,8 +40,8 @@ defmodule Beacon.Loader.ErrorPageTest do
   end
 
   test "default layouts", %{error_module: error_module} do
-    assert error_module.layout(404, %{inner_content: "Not Found"}) == {:safe, ["Not Found"]}
-    assert error_module.layout(500, %{inner_content: "Internal Server Error"}) == {:safe, ["Internal Server Error"]}
+    assert error_module.layout(404, %{inner_content: "Not Found"}) == {:safe, ["<Beacon.Web.CoreComponents.flash_group id=\"flash_group\" flash={@flash} />\n    ", "Not Found"]}
+    assert error_module.layout(500, %{inner_content: "Internal Server Error"}) == {:safe, ["<Beacon.Web.CoreComponents.flash_group id=\"flash_group\" flash={@flash} />\n    ", "Internal Server Error"]}
   end
 
   test "custom layout" do
@@ -65,6 +65,7 @@ defmodule Beacon.Loader.ErrorPageTest do
           </script>
         </head>
         <body>
+          <Beacon.Web.CoreComponents.flash_group id="flash_group" flash={@flash} />
           Not Found
         </body>
       </html>
@@ -86,6 +87,7 @@ defmodule Beacon.Loader.ErrorPageTest do
           </script>
         </head>
         <body>
+          <Beacon.Web.CoreComponents.flash_group id="flash_group" flash={@flash} />
           Internal Server Error
         </body>
       </html>

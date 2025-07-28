@@ -33,6 +33,7 @@ defmodule Beacon.Web.Live.PageLiveTest do
       beacon_published_layout_fixture(
         template: """
         <header>Page header</header>
+        <Beacon.Web.CoreComponents.flash_group id="flash_group" flash={@flash} />
         <%= @inner_content %>
         <footer>Page footer</footer>
         """,
