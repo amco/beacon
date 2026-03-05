@@ -241,8 +241,8 @@ defmodule Beacon.Config do
             router: nil,
             repo: nil,
             mode: :live,
-            # TODO: rename to `authorization_policy`, see https://github.com/BeaconCMS/beacon/pull/563
-            # authorization_source: Beacon.Authorization.DefaultPolicy,
+            # TODO: this is a simple implementation allowing to have no auth at all
+            authorization_policy: nil,
             css_compiler: Beacon.RuntimeCSS.TailwindCompiler,
             tailwind_config: nil,
             tailwind_css: nil,
